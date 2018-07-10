@@ -47,8 +47,8 @@ export class FilmsPage {
   }
 
   openFilm(film) {
-    let myModal = this.modalCtrl.create(FilmDetailPage, { film });
-    myModal.present();
+    let filmModal = this.modalCtrl.create(FilmDetailPage, { film });
+    filmModal.present();
   }
 
   showAlert(){

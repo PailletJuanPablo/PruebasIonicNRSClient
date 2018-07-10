@@ -1,6 +1,7 @@
+import { CharDetailPage } from './../char-detail/char-detail';
 import { SwapiProvider } from './../../../providers/swapi/swapi';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, LoadingController, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, ModalController, NavParams, ViewController, LoadingController, AlertController } from 'ionic-angular';
 
 /**
  Component to show the details of the selected film in a modal
@@ -12,6 +13,9 @@ interface Character {
   height: number,
   mass: number,
   gender: string,
+  hair_color:string,
+  skin_color:string,
+  birth_year:string
 }
 
 // Interface to define and verify the Planet Class accord to Typescript Good Practices
@@ -49,25 +53,29 @@ export class FilmDetailPage {
     public viewCtrl: ViewController,
     public swapi: SwapiProvider,
     public loadingCtrl: LoadingController,
-    public alertCtrl: AlertController) {
+    public alertCtrl: AlertController,
+    public modalCtrl: ModalController) {
     //Show a loading to get the details of Film
     this.loading = this.loadingCtrl.create({
       content: 'Loading Film Details...'
     });
     this.loading.present();
-  }
-
-  ionViewDidLoad() {
     this.film = this.navParams.get("film");
     console.log(this.film);
+    //Call methods to get data
     this.getFilmPlanets(this.film.planets);
     this.getFilmChars(this.film.characters);
   }
 
+  //Method to handle view close
   close() {
     this.viewCtrl.dismiss();
   }
 
+  openCharDetail(char) {
+    let charModal = this.modalCtrl.create(CharDetailPage, { char });
+    charModal.present();
+  }
 
   //Method to get the characters of the film
   getFilmChars(characters) {
@@ -81,7 +89,10 @@ export class FilmDetailPage {
               name: char.name,
               height: char.height,
               mass: char.mass,
-              gender: char.gender
+              gender: char.gender,
+              hair_color:char.hair_color,
+              skin_color:char.skin_color,
+              birth_year:char.birth_year
             })
           }, error => {
             //Handle any error if getting data

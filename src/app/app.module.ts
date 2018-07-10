@@ -21,6 +21,7 @@ import { StarshipsPageModule } from './../pages/starships/starships.module';
 import { FilmsPageModule } from './../pages/films/films.module';
 import { VehiclesPageModule } from '../pages/vehicles/vehicles.module';
 import { FilmDetailPageModule } from './../pages/films/film-detail/film-detail.module';
+import { CharDetailPageModule } from './../pages/films/char-detail/char-detail.module';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { FilmDetailPageModule } from './../pages/films/film-detail/film-detail.m
     FilmsPageModule,
     VehiclesPageModule,
     StarshipsPageModule,
-    FilmDetailPageModule
+    FilmDetailPageModule,
+    CharDetailPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

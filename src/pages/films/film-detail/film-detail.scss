@@ -1,3 +1,22 @@
 page-film-detail {
+    .darkCard{
+        background-color:rgb(0, 0, 0);
+        h2{
+            font-weight: bold;
+            color:color($colors, yellowStar);
+        }
+        /*Added to fix some buggy ionic card header style*/
+        margin-bottom:2%;
+        .pull-right {
+            float: right;
+          }
+    }
+    /*Added a little more rounder border in this card*/
+    .card{
+        border-radius: 20px;
+    }
 
+    .dark{ 
+        background:color($colors, dark);
+    }
 }

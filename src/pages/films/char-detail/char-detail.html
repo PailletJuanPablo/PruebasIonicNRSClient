@@ -1,0 +1,23 @@
+<!--
+Component to show character data
+-->
+<ion-content class="dark">
+    <ion-navbar color="dark">
+        <ion-buttons end>
+          <button ion-button icon-only (click)="close()">
+            <ion-icon name="close"></ion-icon>
+            CLOSE
+          </button>
+        </ion-buttons>
+      </ion-navbar>
+      <div class="details" padding> 
+      <h2>Name: {{char?.name }} </h2>
+      <hr>
+   <h3>Height:  {{char?.height}}  </h3>
+   <h3>Mass: {{char?.mass}}  </h3> 
+   <h3>Gender: {{char?.gender}}  </h3> 
+   <h3>Hair Color: {{char?.hair_color}}  </h3> 
+   <h3>Skin Color: {{char?.skin_color}}  </h3> 
+   <h3>Birth Year: {{char?.birth_year}}  </h3> 
+  </div>
+</ion-content>

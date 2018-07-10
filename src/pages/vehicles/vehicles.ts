@@ -27,19 +27,21 @@ export class VehiclesPage {
       content: 'Loading Vehicles...'
     });
     loading.present();
-    
+
     //Getting data. change the 'starships' string for anything to activate an error
     this.swapi.getData("vehicles").subscribe((vehicles: any) => {
       this.vehicleList = vehicles.results;
       loading.dismiss();
       console.log(this.vehicleList);
     }, error => {
+      //If we got an error, we dismiss the loader and show an alert to the user.
       loading.dismiss();
       this.showAlert();
     })
 
   }
 
+  //method to show alert to user
   showAlert() {
     let alert = this.alertCtrl.create({
       title: 'Ups',

@@ -2,10 +2,8 @@
 Component to show the details of the Films
 -->
 <ion-header>
-
   <ion-navbar color="dark">
     <ion-title>{{film?.title }}</ion-title>
-
     <ion-buttons end>
       <button ion-button icon-only (click)="close()">
         <ion-icon name="close"></ion-icon>
@@ -13,9 +11,6 @@ Component to show the details of the Films
       </button>
     </ion-buttons>
   </ion-navbar>
-
-
-
 </ion-header>
 
 
@@ -23,6 +18,22 @@ Component to show the details of the Films
   <h4> Opening Crawl</h4>
 
   <p [innerHtml]="film?.opening_crawl"> </p>
+
+  <hr> 
+  <h4> Characters of The Film</h4>
+  <h6> Tap on the name to see more details</h6>
+  <ion-card *ngFor="let char of charsList" class="darkCard">
+    <ion-card-header  (click)="openCharDetail(char)">
+        <h2 item-left> Name: {{char?.name}}
+            <span item-right>
+                <div class="pull-right">
+                  <ion-icon name="ios-arrow-dropright-outline"></ion-icon>
+                </div>
+              </span>
+            </h2>
+    </ion-card-header>
+  </ion-card>
+
 <hr> 
   <h4> Planets of The Film</h4>
   <ion-card *ngFor="let planet of planetsList">
@@ -37,18 +48,7 @@ Component to show the details of the Films
       </p>
     </ion-card-content>
   </ion-card>
-  <hr> 
-  <h4> Characters of The Film</h4>
-  <ion-card *ngFor="let char of charsList">
-    <ion-card-header>
-      Name: {{char?.name}}
-    </ion-card-header>
-    <ion-card-content>
-      <p> Height: {{char?.height}}
-        <br> Mass: {{char?.mass}}
-      </p>
-    </ion-card-content>
-  </ion-card>
+ 
 
 
   <button ion-button block color="dark" (click)="close()"> Close</button>

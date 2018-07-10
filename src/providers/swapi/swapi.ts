@@ -5,15 +5,6 @@ import { Injectable } from '@angular/core';
  Service to manage the data Flow from the API
 */
 
-//Created an Interface to verify and show characters of Film correctly
-interface Character {
-  name:string,
-  height: number,
-  mass: number,
-  gender: string,
-  }
-
-
 @Injectable()
 export class SwapiProvider {
 
