@@ -20,4 +20,8 @@ export class HomePage {
 
   }
 
+  //Function to manage navigation logic. Will push the pages using Ionic v3 Lazy Load
+  goTo(page:string){
+    this.navCtrl.push(page);
+  }
 }
