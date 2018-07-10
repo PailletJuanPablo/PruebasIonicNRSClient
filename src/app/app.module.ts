@@ -20,6 +20,7 @@ import { SwapiProvider } from '../providers/swapi/swapi';
 import { StarshipsPageModule } from './../pages/starships/starships.module';
 import { FilmsPageModule } from './../pages/films/films.module';
 import { VehiclesPageModule } from '../pages/vehicles/vehicles.module';
+import { FilmDetailPageModule } from './../pages/films/film-detail/film-detail.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { VehiclesPageModule } from '../pages/vehicles/vehicles.module';
     //Page modules imported to add Lazy Load Feature of Ionic 3
     FilmsPageModule,
     VehiclesPageModule,
-    StarshipsPageModule
+    StarshipsPageModule,
+    FilmDetailPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

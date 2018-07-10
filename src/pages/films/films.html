@@ -6,13 +6,31 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Films</ion-title>
+  <ion-navbar color="dark">
+    <ion-title class="yellow" >Films</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding style="background:black">
+
+
+  <ion-card *ngFor="let film of films">
+    <ion-card-header class="titleHeader" (click)="openFilm(film)" >
+      <h2 item-left> {{film.title}}
+        <span item-right>
+          <div class="pull-right">
+            <ion-icon name="ios-arrow-dropright-outline"></ion-icon>
+          </div>
+        </span>
+      </h2>
+    </ion-card-header>
+    <ion-card-content>
+      <p> Director: {{film.director}} </p>
+      <p> Producer: {{film.producer}} </p>
+    </ion-card-content>
+  </ion-card>
+
 
 </ion-content>
