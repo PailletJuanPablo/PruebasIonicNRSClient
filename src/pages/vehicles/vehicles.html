@@ -1,18 +1,29 @@
 <!--
-  Generated template for the VehiclesPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
+Page to show Vehicles 
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Vehicles</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+    <ion-navbar color="dark">
+      <ion-title>Vehicles</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding class="dark">
+  
+      <ion-card *ngFor="let vehicle of vehicleList">
+          <ion-card-header class="titleHeader"  >
+            <h2 item-left> {{vehicle.name}}</h2>
+          </ion-card-header>
+          <ion-card-content>
+            <p> Model: {{vehicle.model}} </p>
+            <p> Manufacturer: {{vehicle.manufacturer}} </p>
+            <p> Cost in Credits: {{vehicle.cost_in_credits}} </p>
+            <p> Lenght: {{vehicle.length}} </p>
+  
+          </ion-card-content>
+        </ion-card>
+  
+  </ion-content>
+  

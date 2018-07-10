@@ -1,18 +1,55 @@
 <!--
-  Generated template for the FilmDetailPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
+Component to show the details of the Films
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>{{film?.title}}</ion-title>
+  <ion-navbar color="dark">
+    <ion-title>{{film?.title }}</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="close()">
+        <ion-icon name="close"></ion-icon>
+        CLOSE
+      </button>
+    </ion-buttons>
   </ion-navbar>
+
+
 
 </ion-header>
 
 
 <ion-content padding>
-<button ion-button (click)="close()"> Close</button>
+  <h4> Opening Crawl</h4>
+
+  <p [innerHtml]="film?.opening_crawl"> </p>
+<hr> 
+  <h4> Planets of The Film</h4>
+  <ion-card *ngFor="let planet of planetsList">
+    <ion-card-header>
+      Name: {{planet?.name}}
+    </ion-card-header>
+    <ion-card-content>
+      <p> Rotation Period: {{planet?.rotation_period}}
+        <br>  {{planet?.orbital_period}}
+        <br> {{ planet?.diameter}}
+        <br> {{ planet?.climate}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <hr> 
+  <h4> Characters of The Film</h4>
+  <ion-card *ngFor="let char of charsList">
+    <ion-card-header>
+      Name: {{char?.name}}
+    </ion-card-header>
+    <ion-card-content>
+      <p> Height: {{char?.height}}
+        <br> Mass: {{char?.mass}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+
+  <button ion-button block color="dark" (click)="close()"> Close</button>
 </ion-content>

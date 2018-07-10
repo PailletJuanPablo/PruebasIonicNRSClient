@@ -1,18 +1,28 @@
 <!--
-  Generated template for the StarshipsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
+ Page to show Starships
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="dark">
     <ion-title>Starships</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="dark">
+
+    <ion-card *ngFor="let starship of starShipsList">
+        <ion-card-header class="titleHeader"  >
+          <h2 item-left> {{starship.name}}</h2>
+        </ion-card-header>
+        <ion-card-content>
+          <p> Cargo Capacity: {{starship.cargo_capacity}} </p>
+          <p> Consumables: {{starship.consumables}} </p>
+          <p> Cost in Credits: {{starship.cost_in_credits}} </p>
+          <p> Crew: {{starship.crew}} </p>
+
+        </ion-card-content>
+      </ion-card>
 
 </ion-content>

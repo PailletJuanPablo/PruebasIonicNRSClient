@@ -1,12 +1,11 @@
+import { SwapiProvider } from './../../providers/swapi/swapi';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
 
 /**
- * Generated class for the VehiclesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
+Page to fetch and show starships
  */
+
 
 @IonicPage()
 @Component({
@@ -15,11 +14,43 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class VehiclesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  //Created a variable to store the characters of the movie
+  vehicleList = [];
+
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    public swapi: SwapiProvider,
+    public loadingCtrl: LoadingController,
+    private alertCtrl: AlertController) {
+    //Stars loading Starships
+    let loading = this.loadingCtrl.create({
+      content: 'Loading Vehicles...'
+    });
+    loading.present();
+    
+    //Getting data. change the 'starships' string for anything to activate an error
+    this.swapi.getData("vehicles").subscribe((vehicles: any) => {
+      this.vehicleList = vehicles.results;
+      loading.dismiss();
+      console.log(this.vehicleList);
+    }, error => {
+      loading.dismiss();
+      this.showAlert();
+    })
+
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad VehiclesPage');
+  showAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'Ups',
+      subTitle: "Can't get the vehicles list",
+      buttons: [{
+        text: 'Ok',
+        handler: () => {
+          this.navCtrl.popToRoot()
+        }
+      }]
+    });
+    alert.present();
   }
-
 }
