@@ -20,7 +20,9 @@ Installation and running:
 
 (Latest version of Ionic Framework required)
 
+```bash
 git clone https://github.com/PailletJuanPablo/PruebasIonicNRSClient.git
 npm install
 ionic cordova platform add android
 ionic cordova run android 
+```
