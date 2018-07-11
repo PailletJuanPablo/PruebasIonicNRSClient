@@ -25,4 +25,8 @@ git clone https://github.com/PailletJuanPablo/PruebasIonicNRSClient.git
 npm install
 ionic cordova platform add android
 ionic cordova run android 
+ionic cordova platfom add ios
+ionic cordova run ios
 ```
+
+NOTIFICATIONS IN IOS NOT READY. iOS Push Certificate is needed for that.
