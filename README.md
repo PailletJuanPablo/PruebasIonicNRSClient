@@ -11,3 +11,16 @@ Principal functions:
 1) Call to an Api and get Details
 2) Receibe firebase notifications trough FCM
 3) Cross Platform 
+
+
+---
+
+
+Installation and running: 
+
+(Latest version of Ionic Framework required)
+
+git clone https://github.com/PailletJuanPablo/PruebasIonicNRSClient.git
+npm install
+ionic cordova platform add android
+ionic cordova run android 

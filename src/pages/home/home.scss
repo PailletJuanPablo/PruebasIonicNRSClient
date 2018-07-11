@@ -1,3 +1,33 @@
 page-home {
-
+    .darken{
+        background:black;
+    }
+    .floatingBox{
+        text-align: center;
+        color: color($colors, light);
+        width:80%;
+        margin:auto;
+        background:  color($colors, dark);
+        z-index: 999999999;
+        margin-top: -100px;
+        border-radius: 10px;
+        padding:5%;
+        button{
+            margin-top: 10%
+        }
+    }
+    .backTop{
+        top:0;
+        background: url("https://ep01.epimg.net/cultura/imagenes/2017/08/02/actualidad/1501661766_020854_1501661918_noticia_normal.jpg");
+        height: 200px;
+        background-size: cover;
+        background-position: center center
+    }
+    .footerText{
+        margin-top:100px;
+        p{
+            text-align: center;
+            color:color($colors, light);
+        }
+    }
 }

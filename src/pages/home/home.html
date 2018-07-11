@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="dark">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -7,9 +7,17 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>NRS TESTS DEMO</h3>
-  <button ion-button (click)="goTo('FilmsPage')"> Films </button> 
-  <button ion-button (click)="goTo('VehiclesPage')"> Vehicles </button> 
-  <button ion-button (click)="goTo('StarshipsPage')"> Starships </button> 
+<ion-content class="darken">
+      <div class="backTop" > </div>
+      <div class="floatingBox"> 
+          <h3 >NRS TESTS DEMO</h3>
+          <h4> Select your option to start</h4>
+          <button ion-button full color="danger" round (click)="goTo('FilmsPage')"> Films </button> 
+          <button ion-button full color="danger" round (click)="goTo('VehiclesPage')"> Vehicles </button> 
+          <button ion-button full color="danger" round (click)="goTo('StarshipsPage')"> Starships </button> 
+        </div>
+
+<div class="footerText">
+        <p > Developed with ♥ by Juan Pablo Paillet </p>
+      </div>
 </ion-content>

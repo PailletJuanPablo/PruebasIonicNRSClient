@@ -15,7 +15,9 @@ page-films {
     .card{
         border-radius: 10px;
     }
-
+    .white{
+        color:color($colors, light);
+    }
     .dark{ 
         background:color($colors, dark);
     }
