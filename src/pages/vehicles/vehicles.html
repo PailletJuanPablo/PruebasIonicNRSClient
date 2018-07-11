@@ -2,16 +2,11 @@
 Page to show Vehicles 
 -->
 <ion-header>
-
     <ion-navbar color="dark">
       <ion-title>Vehicles</ion-title>
     </ion-navbar>
-  
   </ion-header>
-  
-  
   <ion-content padding class="dark">
-  
       <ion-card *ngFor="let vehicle of vehicleList">
           <ion-card-header class="titleHeader"  >
             <h2 item-left> {{vehicle.name}}</h2>
@@ -21,9 +16,7 @@ Page to show Vehicles
             <p> Manufacturer: {{vehicle.manufacturer}} </p>
             <p> Cost in Credits: {{vehicle.cost_in_credits}} </p>
             <p> Lenght: {{vehicle.length}} </p>
-  
           </ion-card-content>
         </ion-card>
-  
   </ion-content>
   

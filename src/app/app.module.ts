@@ -23,6 +23,9 @@ import { VehiclesPageModule } from '../pages/vehicles/vehicles.module';
 import { FilmDetailPageModule } from './../pages/films/film-detail/film-detail.module';
 import { CharDetailPageModule } from './../pages/films/char-detail/char-detail.module';
 
+//Provider to serve native notifications
+import { OneSignal } from '@ionic-native/onesignal';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -49,7 +52,8 @@ import { CharDetailPageModule } from './../pages/films/char-detail/char-detail.m
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    SwapiProvider
+    SwapiProvider,
+    OneSignal
   ]
 })
 export class AppModule { }
